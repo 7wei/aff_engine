@@ -15,11 +15,11 @@
       <td><%= product.title %></td>
       <td><%= product.description %></td>
       <th>
-        <ul>
+        <ol>
           <% product.links.each do |link| %>
             <li><%= link.url %>(<%= link.source %>)<li>
           <% end %>
-        </ul>
+        </ol>
       </th>
       <td><%= product.created_at.strftime("%FT%T") %></td>
       <td>

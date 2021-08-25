@@ -22,6 +22,7 @@ class LinksController < ApplicationController
     if @link.save
       redirect_to links_path()
     else
+      render 'new'
     end
   end
 
@@ -45,10 +46,11 @@ class LinksController < ApplicationController
     params.require(:link).permit(
       :source,
       :url,
+      :product_id
     )
   end
 
   def set_link
-    @link = link.find(params[:id])
+    @link = Link.find(params[:id])
   end
 end

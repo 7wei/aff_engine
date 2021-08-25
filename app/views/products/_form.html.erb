@@ -1,0 +1,14 @@
+<%= form_with(model: @product, local: true) do |form| %>
+  <div>
+    <%= form.label "Title", class: "label" %>
+    <%= form.text_field :title, class: "input" %>
+  </div>
+  <div>
+    <%= form.label "Description", class: "label" %>
+    <%= form.text_area :description, class: "input" %>
+  </div>
+  <div class="buttons">
+    <%= form.submit "Save", disable_with: 'Submiting...' %>
+    <%= link_to "Cancel", products_path() %>
+  </div>
+<% end %>
